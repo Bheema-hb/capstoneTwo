@@ -1,6 +1,11 @@
 package com.sakhatech.parkme.Activity;
 
 import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProvider;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -9,9 +14,11 @@ import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.sakhatech.parkme.util.Constants;
+import com.sakhatech.spotizen.R;
 
 /**
  * Created by bheema.
@@ -144,4 +151,15 @@ public class BaseFragment extends Fragment {
         BaseFragment.this.getActivity().startActivityForResult(intent, requestCode);
 
     }
+
+    protected void updateWidget() {
+        Intent intent = new Intent(BaseFragment.this.getActivity(), ParkWidgetProvider.class);
+        intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
+        int ids[] = AppWidgetManager.getInstance(getActivity().getApplication()).getAppWidgetIds(new ComponentName(getActivity().getApplication(), ParkWidgetProvider.class));
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
+        getActivity(). sendBroadcast(intent);
+    }
+
+
+
 }

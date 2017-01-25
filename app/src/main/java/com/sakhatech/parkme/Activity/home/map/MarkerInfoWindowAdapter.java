@@ -52,7 +52,7 @@ public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
                 parkingArea.setText(parkingSlot.parkingArea);
                 availableSlots.setText(parkingSlot.availableSlots + " " + mContext.getString(R.string.slots_available_near) + " " + parkingSlot.parkingArea);
-                parkingPrice.setText(mContext.getString(R.string.rupee_symbol) + "200");
+                parkingPrice.setText(mContext.getString(R.string.rupee_symbol) + mContext.getString(R.string.two_hundred));
                 return v;
             } else {
                 if (parkingSlot.isVehicle && parkingSlot.isParked) {

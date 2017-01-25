@@ -18,18 +18,18 @@ android {
     }
 
 
+    signingConfigs {
+        release {
+            storeFile file('../parkme.jks')
+            storePassword "parkme"
+            keyAlias "parkme"
+            keyPassword "parkme"
+        }
+    }
+
+
     productFlavors {
 
-//        production {
-//            applicationId "in.nanodegree.android.parkme.dev"
-//            minSdkVersion 15
-//            targetSdkVersion 22
-//            versionName "0.0.1"
-//            versionCode 1
-//            manifestPlaceholders = [app_name: "ParkMe"]
-//            buildConfigField "String", "URL", "\"http://www.mocky.io/\""
-//            buildConfigField "boolean", "IS_PRODUCTION", "true"
-//        }
 
         development {
             applicationId "in.nanodegree.android.parkme"
@@ -44,12 +44,11 @@ android {
     }
     buildTypes {
 
-//        playStoreRelease {
-//            signingConfig signingConfigs.prodrelease
-//            debuggable false
-//            minifyEnabled true
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//        }
+        playStoreRelease {
+            signingConfig signingConfigs.release
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
 
         debug {
 

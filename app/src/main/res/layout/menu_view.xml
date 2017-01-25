@@ -19,6 +19,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="31dp"
             android:layout_marginStart="15dp"
+            android:contentDescription="@string/navigation_menu"
             android:src="@drawable/help" />
 
 

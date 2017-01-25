@@ -30,6 +30,7 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginStart="15dp"
                 android:background="@drawable/button_backgnd"
+                android:contentDescription="@string/signup"
                 android:gravity="center"
                 android:text="@string/signup"
                 android:textColor="@color/white"

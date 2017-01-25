@@ -29,7 +29,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="SLOT NO 5"
                 android:textColor="@color/red_color"
                 android:textSize="19dp" />
 
@@ -38,7 +37,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="01 : 34 : 34"
                 android:textColor="@color/white"
                 android:textSize="25dp"
                 android:textStyle="bold" />

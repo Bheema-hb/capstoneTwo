@@ -1,5 +1,6 @@
 package com.sakhatech.parkme.Activity.payment;
 
+import android.content.DialogInterface;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,7 @@ import com.sakhatech.spotizen.R;
 import com.sakhatech.spotizen.databinding.ActivityPaymentBinding;
 
 
-public class PaymentActivity extends BaseActivity implements View.OnClickListener{
+public class PaymentActivity extends BaseActivity implements View.OnClickListener {
 
     private ActivityPaymentBinding activityPaymentBinding;
 
@@ -45,9 +46,15 @@ public class PaymentActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.close_payment_summary)
-        {
+        if (v.getId() == R.id.close_payment_summary) {
             finish();
+        } else if (v.getId() == R.id.paynow_id) {
+            showDialog(new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                }
+            }, getString(R.string.button_ok), getString(R.string.handle_payment), getString(R.string.handle_payment_here), false);
         }
 
     }

@@ -66,6 +66,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.sakhatech.parkme.Activity.BaseActivity;
 import com.sakhatech.parkme.Activity.BaseFragment;
+import com.sakhatech.parkme.Activity.ParkWidgetProvider;
 import com.sakhatech.parkme.Activity.home.model.StartParkingResponse;
 import com.sakhatech.parkme.Activity.payment.PaymentActivity;
 import com.sakhatech.parkme.ParkMeApplication;
@@ -118,7 +119,7 @@ public class HomeMapFragment extends BaseFragment implements OnMapReadyCallback,
     static Timer mParkingTimer;
     private Handler mHandler;
 
-    RelativeLayout  mParkedLayout;
+    RelativeLayout mParkedLayout;
     boolean mIsRestoreParkCalled;
     TextView mParkedAreaName, mParkedPriceTextView;
 
@@ -196,7 +197,7 @@ public class HomeMapFragment extends BaseFragment implements OnMapReadyCallback,
         paymentSummary.setmExit(System.currentTimeMillis());
         paymentSummary.setmLocation(mSelectedParking.carParkName);
         paymentSummary.setmPrice(200);
-        String vehicleNumber=(mSelectedParking.vehicle==null)?"KA01MC2525":mSelectedParking.vehicle;
+        String vehicleNumber = (mSelectedParking.vehicle == null) ? "KA01MC2525" : mSelectedParking.vehicle;
         paymentSummary.setmVehicleNumber(vehicleNumber);
 
         //clear map and start payment screen
@@ -208,6 +209,8 @@ public class HomeMapFragment extends BaseFragment implements OnMapReadyCallback,
         startActivityForResult(paymentIntent, PAYMENT_SUMMARY);
 
         getActivity().getContentResolver().delete(Contract.Record.uri, null, null);
+
+        updateWidget();
 
 
     }
@@ -633,7 +636,7 @@ public class HomeMapFragment extends BaseFragment implements OnMapReadyCallback,
     public void onStartParking(ParkingSlot slotNumber) {
 
         startParking(slotNumber);
-
+        updateWidget();
     }
 
     private void startParking(ParkingSlot slot) {
@@ -645,8 +648,8 @@ public class HomeMapFragment extends BaseFragment implements OnMapReadyCallback,
         mSelectedParking.isParked = true;
         mIsSetFirstParkedMarker = true;
         mSelectedParking.vehicle = ParkMeSharedPreference.getInstance(getActivity()).getVehicle();
-        mSelectedParking.slotNumber=slot.slotNumber;
-        mSelectedParking.parkingArea=slot.parkingArea;
+        mSelectedParking.slotNumber = slot.slotNumber;
+        mSelectedParking.parkingArea = slot.parkingArea;
         initializeParkedTimer(false);
 
 
@@ -677,7 +680,7 @@ public class HomeMapFragment extends BaseFragment implements OnMapReadyCallback,
         showView(mStartParkingLayout);
         showView(mParkedLayout);
         mParkedAreaName.setText(mSelectedParking.carParkName);
-        mParkedPriceTextView.setText(getString(R.string.dollar_symbol) + "200");
+        mParkedPriceTextView.setText(getString(R.string.dollar_symbol) + getString(R.string.two_hundred));
 
         mParkingTimer = new Timer();
         mTimerTask = new TimerTask() {
@@ -780,7 +783,7 @@ public class HomeMapFragment extends BaseFragment implements OnMapReadyCallback,
 
     private void handlePreviousParking(Cursor data) {
         if (data != null && data.moveToFirst()) {
-
+            updateWidget();
             mSelectedParking = new ParkingSlot();
             mSelectedParking.parkingStartedTime = Long.parseLong(data.getString(data.getColumnIndex(Contract.Record.PARK_START_TIME)));
             mSelectedParking.isParked = true;

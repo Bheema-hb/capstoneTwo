@@ -13,4 +13,6 @@ http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     <dimen name="widget_margin">8dp</dimen>
     <dimen name="db_30">30dp</dimen>
     <dimen name="db_24">24dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="db_23">23dp</dimen>
 </resources>

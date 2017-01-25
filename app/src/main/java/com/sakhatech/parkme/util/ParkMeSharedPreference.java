@@ -35,13 +35,13 @@ public class ParkMeSharedPreference {
     }
 
     public void setFbLogin(boolean isLoggedIn) {
-        sharedpreferences.edit().putBoolean(FB_LOGGED_IN, isLoggedIn).commit();
+        sharedpreferences.edit().putBoolean(FB_LOGGED_IN, isLoggedIn).apply();
 
         setIsLoggedIn(isLoggedIn);
     }
 
     public void setIsLoggedIn(boolean isLoggedIn) {
-        sharedpreferences.edit().putBoolean(IS_LOGGED_IN, isLoggedIn).commit();
+        sharedpreferences.edit().putBoolean(IS_LOGGED_IN, isLoggedIn).apply();
     }
 
     public boolean isLoggedIn() {
@@ -53,25 +53,25 @@ public class ParkMeSharedPreference {
     }
 
     public void clearAll() {
-        sharedpreferences.edit().remove(IS_LOGGED_IN).commit();
+        sharedpreferences.edit().remove(IS_LOGGED_IN).apply();
 
-        sharedpreferences.edit().remove(FB_LOGGED_IN).commit();
+        sharedpreferences.edit().remove(FB_LOGGED_IN).apply();
 
-        sharedpreferences.edit().remove(USER_NAME).commit();
-        sharedpreferences.edit().remove(VEHICLE).commit();
-        sharedpreferences.edit().remove(EMAIL).commit();
+        sharedpreferences.edit().remove(USER_NAME).apply();
+        sharedpreferences.edit().remove(VEHICLE).apply();
+        sharedpreferences.edit().remove(EMAIL).apply();
 
     }
 
     public void setEmail(String email) {
-        sharedpreferences.edit().putString(EMAIL,email).commit();
+        sharedpreferences.edit().putString(EMAIL,email).apply();
     }
     public String getEmail(){
         return sharedpreferences.getString(EMAIL,null);
     }
 
     public void setVehicle(String vehicle) {
-        sharedpreferences.edit().putString(VEHICLE,vehicle).commit();
+        sharedpreferences.edit().putString(VEHICLE,vehicle).apply();
     }
 
     public String getVehicle(){
@@ -80,7 +80,7 @@ public class ParkMeSharedPreference {
     }
 
     public void setUsername(String name) {
-        sharedpreferences.edit().putString(USER_NAME,name).commit();
+        sharedpreferences.edit().putString(USER_NAME,name).apply();
     }
 
     public String getUserName(){

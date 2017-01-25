@@ -7,13 +7,13 @@
         android:id="@+id/action_search"
         android:icon="@drawable/search_icon"
         android:menuCategory="secondary"
-        android:title="search"
+        android:title="@string/search"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_notification"
         android:icon="@drawable/bell_icon"
         android:menuCategory="secondary"
-        android:title="notification"
+        android:title="@string/notification"
         app:showAsAction="ifRoom" />
 
 

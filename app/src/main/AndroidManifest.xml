@@ -70,12 +70,14 @@
         <service android:name="com.sakhatech.parkme.network.NetworkService" />
 
         <receiver
-            android:label="Widget"
+            android:label="@string/app_name"
             android:name="com.sakhatech.parkme.Activity.ParkWidgetProvider" >
             <intent-filter >
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-
+            <intent-filter>
+                <action android:name="AUTO_UPDATE" />
+            </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/park_me_widget_info" />

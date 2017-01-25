@@ -67,7 +67,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
-                    android:text="Test user" android:textSize="21dp"
+                    android:text="@string/test_user" android:textSize="21dp"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -79,7 +79,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="5dp" android:textSize="14dp"
-                    android:text="KA01MC2525"
+                    android:text="@string/test_vehicle"
                     android:textColor="#adadb0" />
             </RelativeLayout>
 
