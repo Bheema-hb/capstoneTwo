@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d94213</color>
+    <color name="colorPrimaryDark">#af3510</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+
+
+    <color name="button_pressed">#3bc827</color>
+    <color name="button_normal">#3bc827</color>
+    <color name="green">#4cb860</color>
+    <color name="progress_bar_backgnd_color">#8c000000</color>
+    <color name="menu_divider_color">#e4e4e4</color>
+    <color name="black">#000000</color>
+    <color name="menu_selected">#d2d2d2</color>
+
+    <color name="ultra_dark">#29303F</color>
+    <color name="hint_color">#dadbe3</color>
+    <color name="red_color">#ff5722</color>
+    <color name="red_main_color">#f42828</color>
+    <color name="button_orange_pressed">#ffc952</color>
+    <color name="signUp_bg_color">#f2f5f5</color>
+    <color name="signup_edit_text">#787885</color>
+    <color name="ticker_name_color">#ffc952</color>
+    <color name="light_grey">#97989d</color>
+    <color name="dialog_header_background">#30313c</color>
+
+    <color name="light_white">#9c9ea9</color>
+    <color name="label_text_color">#787885</color>
+    <color name="lable_text_red">#d94213</color>
+
+</resources>

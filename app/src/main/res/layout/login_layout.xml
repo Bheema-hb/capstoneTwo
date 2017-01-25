@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/login_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/db_25"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/db_25" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/user_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_name"
+            android:layout_marginTop="55dp"
+            app:hintTextAppearance="@style/TextInputLayout">
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:hint="@string/user_email"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:id="@+id/password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_name_layout">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextInputLayout">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="17dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/forgot"
+                android:textColor="@color/red_color"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/sign_in_id"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/password_layout"
+            android:layout_margin="15dp"
+            android:background="@drawable/button_backgnd"
+            android:gravity="center"
+            android:text="@string/sign_in"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/create_account_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:text="@string/dont_have_an_account"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:id="@+id/create_account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/create_account"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0.7dp"
+                android:layout_marginRight="0.7dp"
+                android:layout_weight="1"
+                android:background="@drawable/orange_button_backgnd"
+                android:gravity="center"
+                android:text="@string/create_an_account"
+                android:textColor="#88661c"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/sign_up_with_facebook"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/create_account"
+                android:layout_weight="1"
+                android:background="@drawable/orange_button_backgnd"
+                android:gravity="center"
+                android:text="@string/sign_up_with_fb"
+                android:textColor="#88661c"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/loading_layout" />
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp">
+
+
+        <ImageView
+            android:id="@+id/menu_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="31dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="31dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/help" />
+
+
+        <TextView
+            android:id="@+id/menu_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/menu_image"
+            android:textColor="#9c9ba5"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/general"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_toRightOf="@+id/menu_image"
+            android:text="@string/general"
+            android:textSize="16dp"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/menu_divider_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/menu_divider_color" />
+    </RelativeLayout>
+</RelativeLayout>

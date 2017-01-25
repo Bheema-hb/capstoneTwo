@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sakhatech.spotizen">
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name="com.sakhatech.parkme.ParkMeApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAcEMMfMt5MTZV8w9VMy1_Cw-F5y8LgRJc" />
+        <activity
+            android:name="com.sakhatech.parkme.Activity.SplashScreen"
+            android:label="@string/dash_board"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sakhatech.parkme.Activity.signup.LoginScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.sakhatech.parkme.Activity.signup.SignUpScreen"
+            android:label="@string/create_account"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.sakhatech.parkme.Activity.signup.crop.ImageCropActivity" />
+        <activity
+            android:name="com.sakhatech.parkme.Activity.home.HomeActivity"
+            android:label="@string/dash_board"/>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider755664101230470"
+            android:exported="true" />
+        <provider
+            android:name="com.sakhatech.parkme.data.ParkMeProvider"
+            android:authorities="nanodegree.com.capstone"
+            android:exported="false" />
+
+        <activity
+            android:name="com.sakhatech.parkme.Activity.payment.PaymentActivity"
+            android:label="@string/title_activity_payment"
+            android:theme="@style/AppTheme">
+
+        </activity>
+
+        <service android:name="com.sakhatech.parkme.network.NetworkService" />
+
+        <receiver
+            android:label="Widget"
+            android:name="com.sakhatech.parkme.Activity.ParkWidgetProvider" >
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/park_me_widget_info" />
+        </receiver>
+    </application>
+
+</manifest>

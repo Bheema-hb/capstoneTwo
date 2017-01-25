@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sakhatech.parkme.Activity.home.EnterSlotFragment">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dialog_header_background"
+        android:padding="@dimen/dialog_header_fragment">
+
+        <TextView
+            android:id="@+id/label_your_parking_location"
+            style="@style/roboto_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_your_parking_location"
+            android:textAllCaps="true"
+            android:textColor="@color/light_white"
+            android:textSize="11dp" />
+
+        <TextView
+            android:id="@+id/parking_location_value"
+            style="@style/roboto_medium_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_your_parking_location"
+            android:text="@string/parking_name"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header">
+
+        <TextView
+            style="@style/roboto_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/label_enter_slot"
+            android:textAllCaps="true"
+            android:textColor="@color/light_grey"
+            android:textSize="20dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/number_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="60dp" />
+
+            <EditText
+                android:id="@+id/number_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/number_1"
+                android:hint="0"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="60dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/action_start_parking"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_backgnd"
+        android:gravity="center"
+        android:text="@string/label_start_parking"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+</RelativeLayout>
